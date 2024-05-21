@@ -489,7 +489,7 @@ foreach ($feesessiongroup_model as $feesessiongroup_key => $feesessiongroup_valu
     <div class="panel panel-default1">
       <div class="panel-heading pt5 pb5">
         <h6 class="panel-title panel-title1 overflow-hidden">
-          <input class="fee_group_chk vertical-middle" type="checkbox" name="fee_session_group_id[]" value="<?php echo $feesessiongroup_value->id; ?>" <?php echo set_checkbox('fee_session_group_id[]', $feesessiongroup_value->id); ?>>
+          <input class="fee_group_chk vertical-middle" type="checkbox" name="fee_session_group_id[]" id="class_grp_id_<?php echo $feesessiongroup_value->id; ?>" value="<?php echo $feesessiongroup_value->id; ?>" <?php echo set_checkbox('fee_session_group_id[]', $feesessiongroup_value->id); ?>>
           <a class="display-inline collapsed box-plus-panel" data-toggle="collapse" href="#collapse_fees_<?php echo $feesessiongroup_value->id ?>">
              <span class="font14"><?php echo $feesessiongroup_value->group_name; ?></span></a>
           <span class="float-right bmedium pt3 fee_group_total" data-amount="<?php echo ($total_fees); ?>"><?php echo amountFormat($total_fees); ?></span>
@@ -1005,6 +1005,8 @@ $count++;
             getSectionByClass(class_id, 0);
         });
 
+     
+
         $(".color").colorpicker();
 
         $("#btnreset").click(function () {
@@ -1049,7 +1051,13 @@ $count++;
                             div_data += "<option value=" + obj.section_id + " " + sel + ">" + obj.section + "</option>";
                         });
                         $('#section_id').append(div_data);
-                        /// here will be logic to check a fees check
+                        console.log(class_id);
+                        // console.log($("#class_grp_id_"+class_id))
+                        $('.fee_group_chk').prop("checked", false);
+                        $("#class_grp_id_"+class_id).prop("checked", true);
+
+                        
+                        // here will be logic to check a fees check to how
                     },
                     complete: function () {
                         $('#section_id').removeClass('dropdownloading');
@@ -1345,4 +1353,4 @@ $('#fee_session_group_id').multiselect({
 
     });
     });
-</script>    
+</script>
