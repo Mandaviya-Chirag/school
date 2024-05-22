@@ -86,8 +86,6 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
         text-align: right;
         border-top: 1px solid #e5e5e5;
     }
-
-   
 </style>
 
 <div class=" ">
