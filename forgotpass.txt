@@ -1,1 +1,11 @@
 http://localhost/smart_school_src/admin/resetpassword/RkRZZTNuNXM2cWljLytOWkRORHUzT1NpaW85RjFOaWUxWlFzc1UzWWdpOD0=
+
+
+
+filezilla configuration-
+
+host : ftp.radianttechnos.com
+
+username : u123324851.chiragm
+
+password : Chirag@3212
